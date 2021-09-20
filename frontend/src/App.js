@@ -6,6 +6,7 @@ const baseURL = 'http://localhost:8000'
 
 function App() {
   const [canvasDraw, setCanvasDraw] = useState(null)
+  const [onProgress, setOnProgress] = useState(false)
   const [number, setNumber] = useState(null)
 
   function handleClear() {
@@ -29,6 +30,7 @@ function App() {
     context.putImageData(data, 0, 0)
     context.globalCompositeOperation = compositeOperation
 
+    setOnProgress(true)
     axios
       .post(`${baseURL}/predict`, { imageData })
       .then(response => {
@@ -36,6 +38,9 @@ function App() {
       })
       .catch(error => {
         console.log(error)
+      })
+      .then(() => {
+        setOnProgress(false)
       })
   }
 
@@ -73,8 +78,9 @@ function App() {
           <button 
             className="btn btn-outline-primary shadow-none"
             onClick={handleGetDigits}
+            disabled={onProgress}
           >
-            Get digits
+            {onProgress ? 'Predicting...' : 'Get digits'}
           </button>
         </div>
       </div>
