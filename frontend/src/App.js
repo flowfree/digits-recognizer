@@ -80,7 +80,11 @@ function App() {
       </div>
       <div className="row justify-content-center">
         <div className="col-8 text-center">
-          {number && (<p className="lead mt-3">You entered: {number}</p>)}
+          {number && (
+            <pre className="text-center mt-3" style={{fontSize: '50px'}}>
+              <code>{number}</code>
+            </pre>
+          )}
         </div>
       </div>
     </div>
