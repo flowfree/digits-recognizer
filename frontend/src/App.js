@@ -1,5 +1,8 @@
+import axios from 'axios'
 import { useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
+
+const baseURL = 'http://localhost:8000'
 
 function App() {
   const [canvasDraw, setCanvasDraw] = useState(null)
@@ -26,7 +29,14 @@ function App() {
     context.putImageData(data, 0, 0)
     context.globalCompositeOperation = compositeOperation
 
-    setNumber(7)
+    axios
+      .post(`${baseURL}/predict`, { imageData })
+      .then(response => {
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   return (
@@ -38,15 +48,15 @@ function App() {
         </div>
       </div>
       <div className="row justify-content-center">
-        <div className="col-2">
+        <div className="col-6">
           <div className="canvas-wrapper border mb-3">
             <CanvasDraw 
               ref={c => setCanvasDraw(c)}
               lazyRadius={0}
               brushColor="#f00"
-              brushRadius={5}
-              hideGrid={true}
-              canvasHeight="150px"
+              brushRadius={3}
+              hideGrid={false}
+              canvasHeight="100px"
               canvasWidth="100%"
             />
           </div>
