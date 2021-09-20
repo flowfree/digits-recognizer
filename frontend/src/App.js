@@ -2,18 +2,31 @@ import { useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 
 function App() {
-  const [canvas, setCanvas] = useState(null)
-  const [image, setImage] = useState(null)
+  const [canvasDraw, setCanvasDraw] = useState(null)
+  const [number, setNumber] = useState(null)
 
-  function handleClear(e) {
-    e.preventDefault()
-    canvas.clear()
+  function handleClear() {
+    setNumber(null)
+    canvasDraw.clear()
   }
 
-  function handleGetDigits(e) {
-    e.preventDefault()
-    const data = canvas.canvasContainer.childNodes[1].toDataURL('image/jpeg')
-    image.src= data
+  function handleGetDigits() {
+    // Code borrowed from https://github.com/embiem/react-canvas-draw/pull/67
+    const canvas = canvasDraw.canvasContainer.childNodes[1]
+    let context = canvas.getContext('2d')
+    let w = canvas.width
+    let h = canvas.height
+    let data = context.getImageData(0, 0, w, h)
+    const compositeOperation = context.globalCompositeOperation 
+    context.globalCompositeOperation = 'destination-over'
+    context.fillStyle = '#fff'
+    context.fillRect(0, 0, w, h)
+    const imageData = canvas.toDataURL('image/jpeg')
+    context.clearRect(0, 0, w, h)
+    context.putImageData(data, 0, 0)
+    context.globalCompositeOperation = compositeOperation
+
+    setNumber(7)
   }
 
   return (
@@ -28,7 +41,7 @@ function App() {
         <div className="col-2">
           <div className="canvas-wrapper border mb-3">
             <CanvasDraw 
-              ref={c => setCanvas(c)}
+              ref={c => setCanvasDraw(c)}
               lazyRadius={0}
               brushColor="#f00"
               brushRadius={5}
@@ -55,7 +68,11 @@ function App() {
           </button>
         </div>
       </div>
-      <img ref={i => setImage(i)} src="" alt="" />
+      <div className="row justify-content-center">
+        <div className="col-8 text-center">
+          {number && (<p className="lead mt-3">You entered: {number}</p>)}
+        </div>
+      </div>
     </div>
   )
 }
