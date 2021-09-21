@@ -50,13 +50,13 @@ function App() {
   return (
     <div className="container">
       <div className="row text-center justify-content-center">
-        <div className="col-8">
+        <div className="col-12 col-md-8">
           <h1 className="mt-5 mb-3">Digits Recognition</h1>
           <p>Draw the numbers with your mouse on the canvas below.</p>
         </div>
       </div>
       <div className="row justify-content-center">
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <div className="canvas-wrapper border mb-3">
             <CanvasDraw 
               ref={c => setCanvasDraw(c)}
@@ -89,7 +89,7 @@ function App() {
         </div>
       </div>
       <div className="row mt-3 justify-content-center">
-        <div className="col-8 text-center">
+        <div className="col-12 col-md-8 text-center">
           {number && (
             <pre style={{fontSize: '50px'}}>
               <code>{number}</code>
