@@ -5,6 +5,7 @@ import tensorflow as tf
 # Callback to stop the model training when reached the desired accuracy 
 class CheckAccuracy(tf.keras.callbacks.Callback):
     def __init__(self, desired_accuracy):
+        super().__init__()
         self.desired_accuracy = desired_accuracy
 
     def on_epoch_end(self, epoch, logs={}):
