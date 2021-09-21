@@ -23,7 +23,7 @@ class DigitRecognitionModel():
             self.model = self.train_model()
             self.model.save(self.filename)
 
-    def train_model(self, desired_accuracy=.98):
+    def train_model(self, desired_accuracy=.992):
         # Load training and test set
         (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
         x_train = x_train / 255.
