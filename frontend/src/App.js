@@ -11,7 +11,8 @@ function App() {
   const [error, setError] = useState('')
 
   function handleClear() {
-    setNumber(null)
+    setNumber('')
+    setError('')
     canvasDraw.clear()
   }
 
@@ -73,6 +74,7 @@ function App() {
           <button 
             className="btn btn-outline-primary shadow-none me-2"
             onClick={handleClear}
+            disabled={onProgress}
           >
             Clear
           </button>
@@ -85,10 +87,10 @@ function App() {
           </button>
         </div>
       </div>
-      <div className="row justify-content-center">
+      <div className="row mt-3 justify-content-center">
         <div className="col-8 text-center">
           {number && (
-            <pre className="text-center mt-3" style={{fontSize: '50px'}}>
+            <pre style={{fontSize: '50px'}}>
               <code>{number}</code>
             </pre>
           )}
