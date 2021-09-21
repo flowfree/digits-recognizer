@@ -2,7 +2,7 @@ import base64
 import numpy as np
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .dnn import train_model
+from .dnn import DigitRecognitionModel
 from .imgproc import extract_digits_from_image
 
 
@@ -16,7 +16,7 @@ def predict(request):
 
     image_data = image_data.split(',')[-1]
     digits = extract_digits_from_image(image_data)
-    model = train_model()
+    model = DigitRecognitionModel()
     prediction = []
     for digit in digits:
         result = model.predict(digit.reshape(1, 28, 28))

@@ -68,4 +68,5 @@ notebooks/
 env
 venv
 zappa_settings.json
+*.hd5
 
