@@ -1,6 +1,9 @@
 import base64
+import numpy as np
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from .dnn import train_model
+from .imgproc import extract_digits_from_image
 
 
 @api_view(['POST'])
@@ -11,8 +14,14 @@ def predict(request):
             'message': 'Please upload valid JPEG images.'
         }, status=400)
 
-    s = image_data.split(',')[-1]
-    with open('/Users/nash/Desktop/a.jpg', 'wb') as f:
-        f.write(base64.b64decode(s))
+    image_data = image_data.split(',')[-1]
+    digits = extract_digits_from_image(image_data)
+    model = train_model()
+    prediction = []
+    for digit in digits:
+        result = model.predict(digit.reshape(1, 28, 28))
+        prediction.append(np.argmax(result))
 
-    return Response({'result': '7'})
+    return Response({
+        'result': ' '.join([str(i) for i in prediction])
+    })

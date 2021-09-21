@@ -8,6 +8,9 @@ django = "*"
 psycopg2 = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+numpy = "*"
+tensorflow = "*"
+opencv-python = "*"
 
 [dev-packages]
 pytest = "*"
