@@ -7,7 +7,8 @@ const baseURL = 'http://localhost:8000'
 function App() {
   const [canvasDraw, setCanvasDraw] = useState(null)
   const [onProgress, setOnProgress] = useState(false)
-  const [number, setNumber] = useState(null)
+  const [number, setNumber] = useState('')
+  const [error, setError] = useState('')
 
   function handleClear() {
     setNumber(null)
@@ -34,10 +35,10 @@ function App() {
     axios
       .post(`${baseURL}/predict`, { imageData })
       .then(response => {
-        console.log(response.data)
+        setNumber(response.data.result)
       })
       .catch(error => {
-        console.log(error)
+        setError('Something went wrong.')
       })
       .then(() => {
         setOnProgress(false)
@@ -90,6 +91,9 @@ function App() {
             <pre className="text-center mt-3" style={{fontSize: '50px'}}>
               <code>{number}</code>
             </pre>
+          )}
+          {error && (
+            <div className="text-danger">{error}</div>
           )}
         </div>
       </div>
