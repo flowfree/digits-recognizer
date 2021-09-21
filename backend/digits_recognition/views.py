@@ -8,7 +8,7 @@ from .imgproc import extract_digits_from_image
 
 @api_view(['POST'])
 def predict(request):
-    image_data = request.data.get('imageData')
+    image_data = request.data.get('imageData', '')
     if not image_data.startswith('data:image/jpeg;base64'):
         return Response({
             'message': 'Please upload valid JPEG images.'
