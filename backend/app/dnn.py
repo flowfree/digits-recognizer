@@ -14,7 +14,7 @@ class CheckAccuracy(tf.keras.callbacks.Callback):
 
 
 class DigitRecognitionModel():
-    filename = settings.BASE_DIR / 'digits_recognition/model.hd5'
+    filename = settings.BASE_DIR / 'app/model.hd5'
 
     def __init__(self):
         if self.filename.exists():

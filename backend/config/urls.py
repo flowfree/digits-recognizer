@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import JsonResponse
-from digits_recognition.views import predict
+from app.views import predict
 
 
 def home(request):
