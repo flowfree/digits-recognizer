@@ -37,6 +37,7 @@ function App() {
       .post(`${baseURL}/predict`, { imageData })
       .then(response => {
         setNumber(response.data.result)
+        setError('')
       })
       .catch(error => {
         setError('Something went wrong.')
