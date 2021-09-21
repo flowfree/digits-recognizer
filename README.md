@@ -5,5 +5,5 @@ Fullstack handwritten digits recognizer project with TensorFlow, OpenCV, Django,
 
 Screencast:
 
-https://user-images.githubusercontent.com/9797761/134135628-02f1221e-a34d-4ec1-94d4-40ae11e59116.mov
+https://user-images.githubusercontent.com/9797761/134136534-6150691e-ab04-43c4-b2e7-ce817b2c991c.mp4
 
