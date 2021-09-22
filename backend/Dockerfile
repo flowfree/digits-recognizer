@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 
 RUN apt update -y && \
-    apt install -y libgl1 libgl-dev && \
+    apt install -y libgl1 libgl-dev libglib2.0-0 && \
     pip install pipenv && \
     mkdir .venv && \
     pipenv --python 3.8 && \
