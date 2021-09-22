@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 
-const baseURL = 'http://localhost:8000'
+const baseURL = process.env.REACT_APP_API_BASE_URL
 
 function App() {
   const [canvasDraw, setCanvasDraw] = useState(null)

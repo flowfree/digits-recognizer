@@ -58,13 +58,13 @@ working/
 .vendors/
 .vscode/
 .ipynb_checkpoints/
-.env.development
-.env.testing
-.env.production
 .venv
 .nvmrc
 build/
 notebooks/
+backend/.env.development
+backend/.env.testing
+backend/.env.production
 env
 venv
 zappa_settings.json
