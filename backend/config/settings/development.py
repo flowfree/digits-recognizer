@@ -3,7 +3,7 @@ from .base import *
 
 SECRET_KEY = '0123456789abcdef'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
