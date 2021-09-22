@@ -2,7 +2,9 @@ import axios from 'axios'
 import { useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 
-const baseURL = process.env.REACT_APP_API_BASE_URL
+// Get the base URL for the backend
+// Note that you can set this variable in the `.env` file.
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000'
 
 function App() {
   const [canvasDraw, setCanvasDraw] = useState(null)
