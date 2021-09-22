@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 django = "*"
-psycopg2 = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 numpy = "*"
 tensorflow = "*"
 opencv-python = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 pytest = "*"
