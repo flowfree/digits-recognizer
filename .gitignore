@@ -68,5 +68,5 @@ backend/.env.production
 env
 venv
 zappa_settings.json
-*.hd5
+*.h5
 
