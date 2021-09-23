@@ -53,8 +53,11 @@ function App() {
     <div className="container">
       <div className="row text-center justify-content-center">
         <div className="col-12 col-md-8">
-          <h1 className="mt-5 mb-3">Digits Recognition</h1>
-          <p>Draw the numbers with your mouse on the canvas below.</p>
+          <h1 className="mt-5 mb-3">Digits Recognizer</h1>
+          <p>
+            Handwritten digit recognition with TensorFlow, OpenCV, Django, and React<br />
+            Draw the numbers with your mouse on the canvas below.
+          </p>
         </div>
       </div>
       <div className="row justify-content-center">
