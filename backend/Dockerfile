@@ -10,10 +10,9 @@ RUN apt update -y && \
     mkdir .venv && \
     pipenv --python 3.8 && \
     pipenv install && \
-
-# Manually grab the handler.py from zappa
-# This script contains all the zappa magic that routes API gateway requests
-RUN wget https://github.com/zappa/Zappa/blob/master/zappa/handler.py
+    # Manually grab the handler.py from zappa
+    # This script contains all the zappa magic that routes API gateway requests
+    wget https://github.com/zappa/Zappa/blob/master/zappa/handler.py
 
 CMD ["handler.lambda_handler"]
 
