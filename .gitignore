@@ -68,5 +68,6 @@ backend/.env.production
 env
 venv
 zappa_settings.json
+zappa_settings.py
 *.h5
 
