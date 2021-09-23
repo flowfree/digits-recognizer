@@ -6,12 +6,13 @@ COPY . /app
 
 RUN apt update -y && \
     apt install -y wget libgl1 libgl-dev && \
-    pip install pipenv && \
-    pipenv lock -r > requirements.txt && \
-    pip freeze > old.txt && \
-    pip uninstall -y -r old.txt && \
-    rm -f old.txt && \
+    # Generate requirements.txt file for the project
+    pip install pipenv && pipenv lock -r > requirements.txt && \
+    # Remove pipenv and its dependencies
+    pip freeze > old.txt && pip uninstall -y -r old.txt && rm -f old.txt && \
+    # Install the dependencies for the project
     pip install -r requirements.txt && \
+    # Install the dependencies for Lambda
     pip install zappa && \
     pip install --target /app awslambdaric && \
     # Manually grab the handler.py from zappa
