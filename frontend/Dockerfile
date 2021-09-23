@@ -3,6 +3,9 @@
 
 FROM node:16.8 AS builder
 
+ARG REACT_APP_API_BASE_URL=http://localhost:8000
+ENV REACT_APP_API_BASE_URL $REACT_APP_API_BASE_URL
+
 RUN mkdir /app
 
 WORKDIR /app
