@@ -30,9 +30,3 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     )
 }
-
-if 'FRONTEND_HOSTNAME' in os.environ:
-    CORS_ALLOWED_ORIGINS += [
-        'http://' + os.getenv('FRONTEND_HOSTNAME'),
-        'https://' + os.getenv('FRONTEND_HOSTNAME'),
-    ]

@@ -103,3 +103,12 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8000',
 ]
+
+if 'FRONTEND_URL' in os.environ:
+    CORS_ALLOWED_ORIGINS += [os.getenv('FRONTEND_URL')]
+
+if 'FRONTEND_HOSTNAME' in os.environ:
+    CORS_ALLOWED_ORIGINS += [
+        'http://' + os.getenv('FRONTEND_HOSTNAME'),
+        'https://' + os.getenv('FRONTEND_HOSTNAME'),
+    ]
