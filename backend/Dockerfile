@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 
 RUN apt update -y && \
-    apt install -y wget libgl1 libgl-dev && \
+    apt install -y wget libgl1 libgl-dev libglib2.0-0 && \
     # Generate requirements.txt file for the project
     pip install pipenv && pipenv lock -r > requirements.txt && \
     # Remove pipenv and its dependencies
