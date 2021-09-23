@@ -62,9 +62,9 @@ working/
 .nvmrc
 build/
 notebooks/
-backend/.env.development
-backend/.env.testing
-backend/.env.production
+.env.development
+.env.testing
+.env.production
 env
 venv
 zappa_settings.json
