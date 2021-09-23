@@ -15,5 +15,7 @@ psycopg2-binary = "*"
 [dev-packages]
 pytest = "*"
 pytest-django = "*"
+troposphere = "==2.7.1"
+zappa = "*"
 
 [requires]

@@ -5,11 +5,15 @@ WORKDIR /app
 COPY . /app
 
 RUN apt update -y && \
-    apt install -y libgl1 libgl-dev libglib2.0-0 && \
+    apt install -y wget libgl1 libgl-dev libglib2.0-0 && \
     pip install pipenv && \
     mkdir .venv && \
     pipenv --python 3.8 && \
-    pipenv install
+    pipenv install && \
 
-CMD pipenv run ./manage.py runserver 0.0.0.0:8000
+# Manually grab the handler.py from zappa
+# This script contains all the zappa magic that routes API gateway requests
+RUN wget https://github.com/zappa/Zappa/blob/master/zappa/handler.py
+
+CMD ["handler.lambda_handler"]
 
