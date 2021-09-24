@@ -45,4 +45,11 @@ Ensure that you have Docker and Docker Compose installed on your machine. Run:
 
     docker-compose up
 
-to build and run the containers. Open `http://localhost:3000` to see the frontend app.
+to build and run the containers, then open `http://localhost:3000` with your browser 
+to see the frontend app.
+
+If you want to run on machine other than localhost (e.g: EC2 instance), you need to 
+pass `FRONTEND_URL` and `BACKEND_URL` variables so both frontend and backend understand 
+how to talk to each other:
+
+    FRONTEND_URL=http://1.2.3.4:3000 BACKEND_URL=http://1.2.3.4:8000 docker-compose up
