@@ -19,7 +19,7 @@ Ensure that you have Python 3.8+, Pipenv, and recent Node.js installed on your l
 
 2.  Run the development server:
 
-        ppienv run python manage.py runserver
+        pipenv run python manage.py runserver
 
     It will run Django's development server on port 8000.
         
