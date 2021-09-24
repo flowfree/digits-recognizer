@@ -10,7 +10,7 @@ Run the app on local machine
 
 Ensure that you have Python 3.8+, Pipenv, and recent Node.js installed on your local machine.
 
-To run the backend server:
+**To run the backend server:**
 
 1.  Change to the `backend/` directory and install the dependencies:
 
@@ -25,7 +25,7 @@ To run the backend server:
         
 3.  Open `http://localhost:8000` with your browser to see the welcome message.
 
-To run the frontend app:
+**To run the frontend app:**
 
 1.  Change to the `frontend/` directory and install the dependencies:
 
@@ -36,4 +36,13 @@ To run the frontend app:
 
         yarn start
 
-3.  Open `http://localhost:3000` with your browser.
+3.  Open `http://localhost:3000` with your browser to see the frontend app.
+
+Run the app on local machine with Docker
+----------------------------------------
+
+Ensure that you have Docker and Docker Compose installed on your machine. Run:
+
+    docker-compose up
+
+to build and run the containers. Open `http://localhost:3000` to see the frontend app.
