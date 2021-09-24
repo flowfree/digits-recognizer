@@ -3,7 +3,9 @@ Digits Recognizer
 
 Fullstack handwritten digits recognizer project with TensorFlow, OpenCV, Django, and React.
 
-![ScreenFlow](https://user-images.githubusercontent.com/9797761/134186945-8f1d12c3-ef05-4bb7-9ee2-5730511d2763.gif)
+
+https://user-images.githubusercontent.com/9797761/134606813-3ea538f2-1ddd-4610-829d-05e2228c298d.mp4
+
 
 Run the app on local machine
 ----------------------------
