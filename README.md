@@ -45,13 +45,13 @@ Ensure that you have Python 3.8+, Pipenv, and recent Node.js installed on your l
 Run the app on local machine with Docker
 ----------------------------------------
 
-Ensure that you have Docker and Docker Compose installed on your machine. Run:
+Ensure that you have Docker and Docker Compose installed on your machine. Build and 
+run the containers with:
 
     docker-compose build
     docker-compose up
 
-to build and run the containers, then open `http://localhost:3000` with your browser 
-to see the frontend app.
+Then open `http://localhost:3000` with your browser to see the frontend app.
 
 If you want to run on machine other than localhost (e.g: EC2 instance), you need to 
 set the `FRONTEND_URL` and `BACKEND_URL` environment variables so both frontend and 
@@ -64,3 +64,15 @@ to run the app with:
     export BACKEND_URL=http://1.2.3.4:8000 
     docker-compose build
     docker-compose up
+
+<!--
+Deploy to Amazon Web Services
+-----------------------------
+
+There are many ways to deploy the app to AWS. This example will show you how to deploy 
+the React frontend to AWS S3 and the Django backend to AWS Lambda.
+
+Make sure you have Python 3.8+, Pipenv, Docker, and recent Node.js installed on your 
+machine. In addition, this example assumes that you have a domain name registered 
+with Route53 and you have requested the SSL certificate from ACM.
+-->
