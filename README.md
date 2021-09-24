@@ -6,6 +6,7 @@ Fullstack handwritten digits recognizer project with TensorFlow, OpenCV, Django,
 
 https://user-images.githubusercontent.com/9797761/134607130-16740acb-8111-4aaf-acb3-53aeb86ca56f.mp4
 
+See the demo: [digits-recognizer.apps.nashruddinamin.com](https://digits-recognizer.apps.nashruddinamin.com)
 
 Run the app on local machine
 ----------------------------
