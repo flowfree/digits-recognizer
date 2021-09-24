@@ -43,13 +43,20 @@ Run the app on local machine with Docker
 
 Ensure that you have Docker and Docker Compose installed on your machine. Run:
 
+    docker-compose build
     docker-compose up
 
 to build and run the containers, then open `http://localhost:3000` with your browser 
 to see the frontend app.
 
 If you want to run on machine other than localhost (e.g: EC2 instance), you need to 
-pass `FRONTEND_URL` and `BACKEND_URL` variables so both frontend and backend understand 
-how to talk to each other:
+pass `FRONTEND_URL` and `BACKEND_URL` environment variables so both frontend and 
+backend understand how to talk to each other.
 
-    FRONTEND_URL=http://1.2.3.4:3000 BACKEND_URL=http://1.2.3.4:8000 docker-compose up
+For example, if the public IP address of your EC2 instance is `1.2.3.4` then you need 
+to run the app with:
+
+    export FRONTEND_URL=http://1.2.3.4:3000 
+    export BACKEND_URL=http://1.2.3.4:8000 
+    docker-compose build
+    docker-compose up
