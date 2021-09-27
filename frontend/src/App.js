@@ -1,4 +1,9 @@
+import axios from 'axios'
 import DigitsRecognizer from './components/DigitsRecognizer'
+
+// Get the base URL for the backend
+// Note that you can set this variable in the `.env` file.
+const baseURL = process.env.REACT_APP_API_BASE_URL 
 
 function App() {
   return (

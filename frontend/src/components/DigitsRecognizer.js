@@ -4,7 +4,7 @@ import CanvasDraw from 'react-canvas-draw'
 
 // Get the base URL for the backend
 // Note that you can set this variable in the `.env` file.
-const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000'
+const baseURL = process.env.REACT_APP_API_BASE_URL 
 
 function DigitsRecognizer() {
   const [canvasDraw, setCanvasDraw] = useState(null)

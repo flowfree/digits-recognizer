@@ -62,8 +62,6 @@ working/
 .nvmrc
 build/
 notebooks/
-.env.development
-.env.testing
 .env.production
 env
 venv
