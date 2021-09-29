@@ -88,13 +88,13 @@ and you have obtained the SSL certificate from ACM.
 
 1. Change your working directory to the `backend/` dir:
 
-        cd backend
+    cd backend
     
 1. Create new virtualenv and install Zappa:
 
-        python3 -m venv venv
-        . venv/bin/activate
-        pip install troposphere==2.7.1 zappa
+    python3 -m venv venv
+    . venv/bin/activate
+    pip install troposphere==2.7.1 zappa
 
 1. Create a new file named `zappa_settings.json` with the following content:
 
