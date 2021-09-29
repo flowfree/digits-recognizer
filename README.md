@@ -88,7 +88,7 @@ and you have obtained the SSL certificate from ACM.
 
 1. Change your working directory to the `backend/` dir:
 
-    cd backend
+      cd backend
     
 1. Create new virtualenv and install Zappa:
 
