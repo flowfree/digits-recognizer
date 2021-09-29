@@ -79,24 +79,24 @@ Make sure you have Python 3.8+, Pipenv, Docker, and recent Node.js installed on 
 machine. In addition, this example assumes that you have a domain name with two subdomains
 registered with Route53:
 
-- app.example.com
-- api.example.com
+- `app.example.com`
+- `api.example.com`
 
 and you have obtained the SSL certificate from ACM.
 
 **To deploy the backend to AWS Lambda:**
 
-1.  Change your working directory to the `backend/` dir:
+1. Change your working directory to the `backend/` dir:
 
         cd backend
     
-1.  Create new virtualenv and install Zappa:
+1. Create new virtualenv and install Zappa:
 
         python3 -m venv venv
         . venv/bin/activate
         pip install troposphere==2.7.1 zappa
 
-1.  Create a new file named `zappa_settings.json` with the following content:
+1. Create a new file named `zappa_settings.json` with the following content:
 
         {
           "prod": {
